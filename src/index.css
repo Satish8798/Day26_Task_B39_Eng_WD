@@ -1,0 +1,62 @@
+.navigation-menu{
+    background-color: aquamarine;
+    margin: 0;
+    padding: 0;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.navigation-menu ul{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding:30px;
+}
+
+.navigation-menu ul li:hover{
+    box-shadow: 10px 10px 10px grey;
+    cursor: pointer;
+}
+
+.navigation-menu ul li *{
+    text-decoration: none;
+    font-size: large;
+    color: black;
+}
+
+.user-list{
+    display: flex;
+    gap: 30px;
+    padding : 20px;
+    flex-wrap: wrap;
+    background: linear-gradient(aquamarine,grey);
+}
+
+.user-list .user-container{
+    width:200px;
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:20px;
+}
+
+
+.add-form{
+    margin-top:20px;
+    margin-left: 30px;
+}
+
+
+input{
+    width:300px;
+    display: block;
+    margin-top: 10px;
+}
+
+button{
+    margin-top: 10px;
+}
