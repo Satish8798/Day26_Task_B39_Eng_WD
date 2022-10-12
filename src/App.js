@@ -88,13 +88,13 @@ function App() {
       gender: gender
     }
     setUserList([...userList,newUser])
-    navigate('/');
+    navigate('/users');
   }
 
   function handleDelete(id){
     userList.splice(id,1);
     setUserList(userList);
-    navigate('/');
+    navigate('/users');
   }
 
   function handleEdit(name,age,gender,id){
@@ -105,7 +105,7 @@ function App() {
     }
     userList.splice(id,1,editedUser)
     setUserList(userList); 
-    navigate('/');
+    navigate('/users');
   }
 
   return (
