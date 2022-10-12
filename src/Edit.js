@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export function Edit({ handleEdit }) {
+export function Edit({ count }) {
   /* let name = null;
   let age = null;
   let gender = null; */
@@ -21,7 +21,12 @@ export function Edit({ handleEdit }) {
         id = event.currentTarget.value;
       }} />
       <button onClick={() => {
-        navigate("/Edit/" + id)
+        if(id>count-1){
+          alert('Enter valid key!');
+        }else{
+          navigate("/Edit/" + id)
+        }
+        
       }}>Edit User</button>
     </div>
   );

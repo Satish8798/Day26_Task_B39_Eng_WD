@@ -1,9 +1,12 @@
 import {useState} from 'react';
-import { Routes, Route, Link,useParams,useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { Add } from './Add';
 import { Delete } from './Delete';
 import { Edit } from './Edit';
+import { EditDetails } from './EditDetails';
 import { Home } from './Home';
+import { Navigation } from './Navigation';
+import {User} from './Home'
 
 const initialUserList=[
   {
@@ -45,6 +48,31 @@ const initialUserList=[
     name: 'Teja',
     age:26,
     gender: 'Male',
+  },
+  {
+    name: 'Tejaswi',
+    age:22,
+    gender: 'Female',
+  },
+  {
+    name: 'harthik',
+    age:23,
+    gender: 'male',
+  },
+  {
+    name: 'Jagadeesh',
+    age:26,
+    gender: 'Male',
+  },
+  {
+    name: 'Kiran',
+    age:26,
+    gender: 'Male',
+  },
+  {
+    name: 'Maneesh',
+    age:23,
+    gender: 'Male',
   }
 ];
 
@@ -83,53 +111,24 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
+      <hr/>
       <Routes>
-        <Route path="/" element={<Home userList={userList}/>} />
-        <Route path="/add" element={<Add handleAdd={handleAdd}/>} />
-        <Route path="/delete" element={<Delete handleDelete={handleDelete}/>} />
-        <Route path="/edit" element={<Edit />} />
+        <Route path="/" element={<Dashboard/>} />
+        <Route path="/users" element={<Home userList={userList}/>} />
+        <Route path="/add-user" element={<Add handleAdd={handleAdd}/>} />
+        <Route path="/delete-user" element={<Delete handleDelete={handleDelete} count={userList.length}/>} />
+        <Route path="/edit-user" element={<Edit count={userList.length}/>} />
         <Route path="/edit/:id" element={<EditDetails handleEdit={handleEdit} userList={userList}/>}/>
+        <Route path="/users/user/:id" element={<User userList={userList}/>}/>
       </Routes>
     </div>
   );
 }
 
-function EditDetails({handleEdit,userList}){
-
-  const { id } =useParams();
-  let name=null;
-  let age=null;
-  let gender=null;
-
+function Dashboard(){
   return(
-    <div className="edit-form">
-      <input type="text" placeholder={userList[id].name} onChange={(event) => {
-      name = event.currentTarget.value;
-    }} />
-    <input type="text" placeholder={userList[id].age} onChange={(event) => {
-      age = event.currentTarget.value;
-    }} />
-    <input type="text" placeholder={userList[id].gender} onChange={(event) => {
-      gender = event.currentTarget.value;
-    }} />
-    <button onClick={()=>{
-      handleEdit(name,age,gender);
-    }}>Confirm Edit</button>
-    </div>
-  );
-}
-
-function Navigation(){
-  return(
-    <div className="navigation-menu">
-      <ul>
-        <li>
-          <Link to="/">HOME</Link>
-        </li>
-        <li><Link to="/add">ADD</Link></li>
-        <li><Link to="/delete">DELETE</Link></li>
-        <li><Link to="/edit">EDIT</Link></li>
-      </ul>
+    <div className="dashboard">
+      <h1>Welcome to CRUD APP on Users List.</h1>
     </div>
   );
 }

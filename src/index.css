@@ -28,6 +28,8 @@
     color: black;
 }
 
+
+
 .user-list{
     display: flex;
     gap: 30px;
@@ -38,7 +40,7 @@
 
 .user-list .user-container{
     width:200px;
-    background-color: grey;
+    background-color: white;
     border: 1px solid black;
     border-radius: 5px;
     padding:20px;
