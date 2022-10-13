@@ -1,4 +1,4 @@
-.navigation-menu{
+/* .navigation-menu{
     background-color: aquamarine;
     margin: 0;
     padding: 0;
@@ -61,4 +61,66 @@ input{
 
 button{
     margin-top: 10px;
-}
+} */
+/*-----*/
+
+/** Navigation Menu **/
+.app-bar{
+    margin: 0 0 20px 0;
+  }
+  
+  .app-bar .app-bar-btn{
+    position: relative;
+  }
+  
+   .app-bar-btn::after{
+    content:'';
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    left: 5px;
+    width:0;
+    background-color: white;
+    transition: .5s
+  }
+  .app-bar-btn:hover::after{
+    width: 90%;
+  }
+
+  /** content **/
+
+  .dashboard,.delete-form,.edit-form,.edit-id-form{
+    margin-top:70px;
+  }
+
+  .user-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top:100px;
+  }
+
+  .user-container{
+    padding: 20px;
+    width: 200px;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
+
+  .user-container:hover{
+    box-shadow:10px 10px 10px grey;
+    transform: scale(1.1);
+  }
+  
+  .add-form,.delete-form,.edit-form{
+    margin-top: 100px;
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+  }
+
+  .text-field,.add-btn,.del-btn,.edit-btn{
+    width: 300px;
+  }

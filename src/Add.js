@@ -1,3 +1,6 @@
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 
 export function Add({ handleAdd }) {
   let name = null;
@@ -5,19 +8,21 @@ export function Add({ handleAdd }) {
   let gender = null;
 
   return (
-    <div className="add-form">
-      <input type="text" placeholder='enter name...' onChange={(event) => {
+    <div className="add">
+      <form className='add-form'>
+      <TextField className='text-field' id="outlined-basic" label="Name" variant="outlined" onChange={(event) => {
         name = event.currentTarget.value;
       }} />
-      <input type="text" placeholder='enter age...' onChange={(event) => {
+      <TextField className='text-field' id="outlined-basic" label="Age" variant="outlined" onChange={(event) => {
         age = event.currentTarget.value;
       }} />
-      <input type="text" placeholder='enter gender...' onChange={(event) => {
+      <TextField className='text-field' id="outlined-basic" label="Gender" variant="outlined" onChange={(event) => {
         gender = event.currentTarget.value;
       }} />
-      <button onClick={() => {
+      <Button className='add-btn' variant="contained" onClick={() => {
         handleAdd(name, age, gender);
-      }}>Add User</button>
+      }}>Add User</Button>
+      </form>
     </div>
   );
 }

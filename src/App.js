@@ -111,7 +111,6 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
-      <hr/>
       <Routes>
         <Route path="/" element={<Dashboard/>} />
         <Route path="/users" element={<Home userList={userList}/>} />
