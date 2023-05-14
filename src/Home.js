@@ -1,5 +1,5 @@
 import { useNavigate,useParams } from "react-router-dom";
-import Button from '@mui/material/Button';
+import Button from '@mui/material/Button'
 
 
 export function Home({ userList }) {
